@@ -37,11 +37,11 @@ Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js, strea
    Install Mongoose in your Node.js project:
    ```bash
    npm install mongoose
-
+```
 
 2. **Set Up Mongoose Connection**
 Create a file (e.g., `db.js`) to connect to MongoDB:
-```markdown
+
 ```javascript
 const mongoose = require('mongoose');
 
@@ -59,7 +59,7 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
-
+```
 
 3. **Integrate with Your Application**
 In your main file (e.g., `app.js`), call the connection function:
@@ -78,7 +78,7 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
+```
 
 4. **Define a Mongoose Schema and Model**
 Create a schema and model for a collection:
@@ -105,7 +105,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
-
+```
 
 5. **Perform CRUD Operations**
 Use the model to interact with the database:
@@ -128,7 +128,7 @@ const createUser = async () => {
 };
 
 createUser();
-
+```
 
 ### Multitenancy Considerations
 - **Separate Databases**: Connect to a tenant-specific database dynamically:
@@ -146,7 +146,7 @@ const getTenantDB = async (tenantId) => {
 User.find({ tenantId: 'tenant_123' });
 
 - **Connection Management**: Use connection pooling or libraries like `mongoose-tenant` for scalability.
-
+```
 ### Best Practices
 - Store sensitive data (e.g., MongoDB URI) in environment variables:
 ```markdown
@@ -155,7 +155,7 @@ npm install dotenv
 
 require('dotenv').config();
 mongoose.connect(process.env.MONGO_URI);
-
+```
 - Handle connection errors and implement retries.
 - Validate tenant data to prevent cross-tenant access.
 - Monitor database performance, especially for shared schemas.
