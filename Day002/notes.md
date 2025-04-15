@@ -37,11 +37,11 @@ Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js, strea
    Install Mongoose in your Node.js project:
    ```bash
    npm install mongoose
-```
+
 
 2. **Set Up Mongoose Connection**
 Create a file (e.g., `db.js`) to connect to MongoDB:
-
+```markdown
 ```javascript
 const mongoose = require('mongoose');
 
