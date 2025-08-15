@@ -27,7 +27,7 @@ POST_CONTENT=$(</dev/stdin)
 # -------------------------------
 ANALYSIS=$(curl -s https://api.openai.com/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer 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" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
   -d "{
     \"model\": \"gpt-4o-mini\",
     \"messages\": [
